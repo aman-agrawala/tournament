@@ -9,3 +9,7 @@
 \c tournament;
 
 create table players (ID serial primary key, Name text);
+
+create table score (ID serial references players(id), Player text, Opponent text, Win/Loss text)
+
+create table matches (Round int, Match_Number int, Player1_ID serial references players(ID), Player1_Name text references players(Name), Player2_ID serial references players(ID), Players2_Name text references players(Name), Winner text, primary key (Round, Match_Number));
