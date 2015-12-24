@@ -83,6 +83,14 @@ def reportMatch(winner, loser):
       winner:  the id number of the player who won
       loser:  the id number of the player who lost
     """
+    connection = connect()
+    cursor = connection.cursor()
+    Clean_Winner = bleach.clean(winner)
+    Clean_Loser = bleach.clean(loser)
+    cursor.execute("insert into matches (Winner, Loser) values (%s,%s)",
+                   (Clean_Winner, Clean_Loser,))
+    connection.commit()
+    connection.close()
  
  
 def swissPairings():
