@@ -21,6 +21,11 @@ def deleteMatches():
 
 def deletePlayers():
     """Remove all the player records from the database."""
+    connection = connect()
+    cursor = connection.cursor()
+    cursor.execute("delete from players;")
+    connection.commit()
+    connection.close()
 
 
 def countPlayers():
