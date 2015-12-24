@@ -95,12 +95,12 @@ def reportMatch(winner, loser):
  
 def swissPairings():
     """Returns a list of pairs of players for the next round of a match.
-  
+
     Assuming that there are an even number of players registered, each player
     appears exactly once in the pairings.  Each player is paired with another
     player with an equal or nearly-equal win record, that is, a player adjacent
     to him or her in the standings.
-  
+
     Returns:
       A list of tuples, each of which contains (id1, name1, id2, name2)
         id1: the first player's unique id
@@ -108,5 +108,33 @@ def swissPairings():
         id2: the second player's unique id
         name2: the second player's name
     """
+    pairsList = []
+    standings = playerStandings()
+    rowNums = len(standings)
+
+    # Commented this block out because list comprehension is faster
+    # winList = []
+    # print winList
+
+    # for row in standings:
+    #     winList.append(row[2])
+    #     print winList
+    # print winList[1]
+
+    # Better way to do above block of code
+    winList = [row[2] for row in standings]
+    rows = range(1, len(winList)+1)
+    rowLoc = 1
+    while rowLoc <= len(rows):
+        winVal = winList[rowLoc-1]
+        numSimilar = winList.count(winVal)
+        numPairs = numSimilar/2
+        for y in winList[rowLoc-1:numPairs+rowLoc-1]:
+            pair = (standings[rowLoc-1][0], standings[rowLoc-1][1],
+                    standings[rowLoc][0], standings[rowLoc][1])
+            pairsList.append(pair)
+            rowLoc = rowLoc + 2
+    return pairsList
+
 
 
