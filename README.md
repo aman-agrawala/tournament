@@ -3,12 +3,19 @@ The following code is for a program that will implement Swiss Pairings for an ev
 In order to get this code up and running, it is expected that you are familiar with python and have it installed on your computer. Please see https://www.python.org/ for more information on installing and setting up python by yourself. Furthermore, it is advised to install vagrant on your own machine to get all additional programs quickly intsalled. Please see this link for more details on this process: https://www.udacity.com/wiki/ud197/install-vagrant. 
 
 Steps to get code up and running after installing the required programs:
+
 1. Open up terminal/Git Bash and cd to you vagrant folder.
+
 2. Type vagrant up and, after the virtual machine is turned on, type vagrant ssh to login
+
 3. Type cd /vagrant to go to common directory and then cd into your tournament folder.
+
 4. Next you need to initialize the database. To do so, type psql into the terminal/Git Bash window.
+
 	4a. Then type create DATABASE tournament.
+
 	4b. Now open up the tournament.sql file in a plaintext editor like Sublime or notepad. Then copy everything from the editor and paste it into your terminal/Git Bash and hit enter. This sets up the database for you.
+
 5. Now you can adjust your tournament however you desire. Create your own .py file and use the functions provided in tournament.py to adjust your database. Be sure to include the following line at the top of your .py file: from tournament import *. 
 
 The following is a quick reference guide to useful functions within in the tournament.py file.
