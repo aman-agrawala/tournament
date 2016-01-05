@@ -50,7 +50,7 @@ def registerPlayer(name):
     """
     connection = connect()
     cursor = connection.cursor()
-    content = bleach.clean(name)
+    content = name
     cursor.execute("insert into players (Name) values (%s)", (content,))
     connection.commit()
     connection.close()
@@ -85,8 +85,8 @@ def reportMatch(winner, loser):
     """
     connection = connect()
     cursor = connection.cursor()
-    Clean_Winner = bleach.clean(winner)
-    Clean_Loser = bleach.clean(loser)
+    Clean_Winner = winner
+    Clean_Loser = loser
     cursor.execute("insert into matches (Winner, Loser) values (%s,%s)",
                    (Clean_Winner, Clean_Loser,))
     connection.commit()
