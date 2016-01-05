@@ -73,6 +73,7 @@ def playerStandings():
     cursor = connection.cursor()
     cursor.execute("select * from standings;")
     standings = cursor.fetchall()
+    connection.close()
     return standings
 
 
