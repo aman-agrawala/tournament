@@ -1,3 +1,5 @@
+# Tournament Swiss Pairings
+
 The following code is for a program that will implement Swiss Pairings for an even number of players in a single tournament. Eventually this code will be expanded to include multiple tournaments and an odd number of players as well.
 
 In order to get this code up and running, it is expected that you are familiar with python and have it installed on your computer. Please see https://www.python.org/ for more information on installing and setting up python by yourself. Furthermore, it is advised to install vagrant on your own machine to get all additional programs quickly intsalled. Please see this link for more details on this process: https://www.udacity.com/wiki/ud197/install-vagrant. 
